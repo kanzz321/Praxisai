@@ -11,7 +11,7 @@ print(f"Nilai minimun dari list prime adalah: {min_value}")
 
 # print(f"..."): Fungsi print dengan f-string digunakan untuk menampilkan hasilnya ke layar dengan format yang mudah dibaca.
 
-teks = "saya ingin belajar coding"
+teks = ""
 
 jumlah_huruf = {}
 for huruf in teks.replace(" ", ""):
