@@ -60,7 +60,7 @@ while True:
         ulang = input("Apakah kamu mau berhitung lagi? (ya/tidak): ")
 
         if ulang == "tidak":
-            quit()
+            quit("Terimakasih")
         elif ulang == "ya":
             break
         else:
