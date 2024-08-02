@@ -83,3 +83,4 @@ while True:
             print("Input tidak valid, silahkan coba lagi.")
             continue
 
+    #terimakasih
