@@ -61,8 +61,6 @@ while True:
     if isinstance(res, str):
         print(res)
     
-    #res.is_integer(): Untuk memeriksa apakah hasil operasi matematika adalah bilangan bulat, 
-    # sehingga bisa ditampilkan tanpa desimal jika hasilnya bilangan bulat.
     else:
  
         if res.is_integer():
