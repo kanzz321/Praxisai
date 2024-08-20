@@ -6,11 +6,11 @@ image = cv2.imread("02-02-testing2.py//Untitled (1).png")
 cv2.imshow("Image", image)
 cv2.waitKey(0)
 
-purplered = cv2.GaussianBlur(image, (15, 15), 0)
-cv2.imshow("purplered", purplered)
-cv2.waitKey(0)
+# purplered = cv2.GaussianBlur(image, (15, 15), 0)
+# cv2.imshow("purplered", purplered)
+# cv2.waitKey(0)
 
-gray = cv2.cvtColor(purplered, cv2.COLOR_BGR2GRAY)
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 cv2.imshow("Gray", gray)
 cv2.waitKey(0)
 
@@ -18,14 +18,14 @@ edged = cv2.Canny(gray, 30, 150)
 cv2.imshow("Edged", edged)
 cv2.waitKey(0)
 
-thresh = cv2.threshold(gray, 225, 255, cv2.THRESH_BINARY_INV)[1]
+thresh = cv2.threshold(gray, 200, 200, cv2.THRESH_BINARY_INV)[1]
 cv2.imshow("Thresh", thresh)
 cv2.waitKey(0)
 
 cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
 	cv2.CHAIN_APPROX_SIMPLE)
 cnts = imutils.grab_contours(cnts)
-output = purplered.copy()
+output = image.copy()
 # loop over the contours
 for c in cnts:
 	# draw each contour on the output image with a 3px thick purple

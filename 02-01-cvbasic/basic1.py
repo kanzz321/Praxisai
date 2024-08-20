@@ -21,7 +21,7 @@ rotated = imutils.rotate(image, 180)
 cv2.imshow("Imutils Rotation", rotated)
 cv2.waitKey(0)
 
-purplered = cv2.GaussianBlur(image, (15, 15), 0)
+purplered = cv2.GaussianBlur(image, (40, 40), 0)
 cv2.imshow("purplered", purplered)
 cv2.waitKey(0)
 
