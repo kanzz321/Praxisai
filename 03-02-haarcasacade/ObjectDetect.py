@@ -19,7 +19,7 @@ pts = deque(maxlen=buffer_size)
 counter = 0
 score = 0
 goal_counted = False
-recording = False
+recording = False 
 out = None
 record_count = 1
 goal_time = None
@@ -74,7 +74,7 @@ start_time = time.time()
 
 while True:
     frame = vs.read()
-    frame = imutils.resize(frame, width=600)
+    frame = imutils.resize(frame, width=800)
     blurred = cv2.GaussianBlur(frame, (11, 11), 0)
     hsv = cv2.cvtColor(blurred, cv2.COLOR_BGR2HSV)
 
@@ -86,6 +86,7 @@ while True:
     cnts = imutils.grab_contours(cnts)
     center = None
 
+    height, width = frame
     height, width = frame.shape[:2]
     blue_line_y = height - 150  # Garis biru sebagai garis pre-goal
     red_line_y = height - 50    # Garis merah sebagai garis goal
