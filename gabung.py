@@ -27,13 +27,6 @@ def check_known_face(face_encoding):
             results.append((name, role))
     return results
 
-def sharpen_image(image):
-    kernel = np.array([[0, -1, 0],
-                       [-1, 5, -1],
-                       [0, -1, 0]])
-    sharpened = cv2.filter2D(image, -1, kernel)
-    return sharpened
-
 def improve_lighting(image):
     yuv_img = cv2.cvtColor(image, cv2.COLOR_BGR2YUV)
     yuv_img[:, :, 0] = cv2.equalizeHist(yuv_img[:, :, 0])
@@ -83,7 +76,7 @@ def start_video_stream():
             cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
             cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
             cv2.putText(frame, label, (left + 6, bottom - 6), cv2.FONT_HERSHEY_DUPLEX, 1.0, (255, 255, 255), 1)
-
+            
         cv2.imshow('Video', frame)
         key = cv2.waitKey(1) & 0xFF
 
